@@ -32,8 +32,14 @@ switch(process.env.npm_lifecycle_event) {
 		config = merge(
 			common,
 			{
-				devtool: 'source-map'
+				devtool: 'source-map',
+				output: {
+					path: PATHS.build,
+					filename: '[name].[chunkhash].js',
+					chunkFilename: '[chunkhash].js'
+				}
 			},
+			parts.clean(PATHS.build),
 			parts.setFreeVariable(
 				'process.env.NODE_ENV',
 				'production'

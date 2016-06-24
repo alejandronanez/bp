@@ -13,6 +13,7 @@
   "license": "MIT",
   "devDependencies": {
     "babel": "^6.5.2",
+    "clean-webpack-plugin": "^0.1.9",
     "css-loader": "^0.23.1",
     "html-webpack-plugin": "^2.21.0",
     "style-loader": "^0.13.1",
