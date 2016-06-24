@@ -1,6 +1,7 @@
 
 const webpack = require('webpack');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 exports.devServer = function(options) {
 	return {
@@ -79,4 +80,22 @@ exports.clean = function(path) {
 			})
 		]
 	};
+}
+
+exports.extractCSS = function(paths) {
+	return {
+		module: {
+			loaders: [
+				// Extract css during build
+				{
+					test: /\.css$/,
+					loader: ExtractTextPlugin.extract('style', 'css'), // .extract('style', 'css!postcss!..!...!')
+					include: paths
+				}
+			]
+		},
+		plugins: [
+			new ExtractTextPlugin('[name].[chunkhash].css')
+		]
+	}
 }
