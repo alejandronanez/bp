@@ -7,12 +7,14 @@ const parts = require('./tooling/parts');
 
 const PATHS = {
 	app: path.join(__dirname, 'app'),
-	build: path.join(__dirname, 'build')
+	build: path.join(__dirname, 'build'),
+	style: path.join(__dirname, 'app', 'main.css')
 };
 
 const common = {
 	entry: {
-		app: PATHS.app
+		app: PATHS.app,
+		style: PATHS.style
 	},
 	output: {
 		path: PATHS.build,
@@ -49,7 +51,8 @@ switch(process.env.npm_lifecycle_event) {
 				entries: ['react']
 			}),
 			parts.minify(),
-			parts.extractCSS(PATHS.app)
+			parts.extractCSS(PATHS.style),
+			parts.purifyCSS([PATHS.app])
 		);
 		break;
 	default:
@@ -58,7 +61,7 @@ switch(process.env.npm_lifecycle_event) {
 			{
 				devtool: 'eval-source-map'
 			},
-			parts.setupCSS(PATHS.app),
+			parts.setupCSS(PATHS.style),
 			parts.devServer({
 				host: process.env.HOST,
 				port: process.env.PORT

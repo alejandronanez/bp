@@ -2,6 +2,7 @@
 const webpack = require('webpack');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const PurifyCSSPlugin = require('purifycss-webpack-plugin');
 
 exports.devServer = function(options) {
 	return {
@@ -96,6 +97,17 @@ exports.extractCSS = function(paths) {
 		},
 		plugins: [
 			new ExtractTextPlugin('[name].[chunkhash].css')
+		]
+	}
+}
+
+exports.purifyCSS = function(paths) {
+	return {
+		plugins: [
+			new PurifyCSSPlugin({
+				basePath: process.cwd(),
+				paths: paths
+			})
 		]
 	}
 }
