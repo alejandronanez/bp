@@ -50,9 +50,10 @@ switch (process.env.npm_lifecycle_event) {
 				'production'
 			),
 			parts.extractBundle({
-				name: 'vendor',
-				entries: ['react']
+				name: 'vendor'
+				// entries: ['react']
 			}),
+			parts.resolve(PATHS.app),
 			parts.setupBabel(PATHS.app),
 			parts.minify(),
 			parts.extractCSS(PATHS.style),
@@ -69,7 +70,7 @@ switch (process.env.npm_lifecycle_event) {
 			},
 			parts.setupCSS(PATHS.style),
 			parts.setupSCSS(PATHS.style),
-			parts.resolve(),
+			parts.resolve(PATHS.app),
 			parts.setupBabel(PATHS.app),
 			parts.setupPOSTCSS(),
 			parts.devServer({

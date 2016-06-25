@@ -1,16 +1,17 @@
 {
   "private": true,
-  "name": "ES6 boilerplate",
+  "name": "ES6-boilerplate",
   "version": "1.0.0",
   "description": "Boilerplate for SPAs",
   "main": "src/index.js",
   "scripts": {
+  	"deps": "npm shrinkwrap --dev && shrinkpack",
     "build": "webpack",
     "lint": "eslint . --ext .js",
     "start": "webpack-dev-server",
     "test": "ava \"app/**/*.test.js\" --verbose",
     "cover": "nyc --all npm run test",
-    "cover:check": "nyc --all check-coverage --statements 100 --branches 100 --functions 100 --lines 100",
+    "cover:check": "nyc --all check-coverage --statements 90 --branches 90 --functions 90 --lines 90",
     "watch:test": "npm run test -- --watch",
     "watch:cover": "nodemon --quiet --watch app --exec npm run cover -s"
   },
@@ -48,9 +49,6 @@
     "webpack-dev-server": "^1.14.1",
     "webpack-merge": "^0.14.0",
     "webpack-validator": "^2.2.0"
-  },
-  "dependencies": {
-    "react": "^15.1.0"
   },
   "ava": {
     "require": [
