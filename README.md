@@ -11,5 +11,8 @@ This is the base project I use when I want to quickly start a project/POC.
 - `npm run watch:test` -> watch tests
 - `npm run watch:cover` -> watch coverage
 
+### Installation
+You should have [Shrinkpack](https://github.com/JamieMason/shrinkpack) installed in your machine before running `npm install`
+
 ### Sidenote
 This could be too opinionated for your needs. ¯\\\_(ツ)_/¯
