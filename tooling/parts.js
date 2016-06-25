@@ -1,11 +1,11 @@
-
+/* eslint-disable */
 const webpack = require('webpack');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const PurifyCSSPlugin = require('purifycss-webpack-plugin');
 const autoprefixer = require('autoprefixer');
 
-exports.devServer = function(options) {
+exports.devServer = function devServer(options) {
 	return {
 		devServer: {
 			historyApiFallback: true,
@@ -20,10 +20,10 @@ exports.devServer = function(options) {
 				multistep: true
 			})
 		]
-	}
+	};
 };
 
-exports.setupCSS = function(paths) {
+exports.setupCSS = function setupCSS(paths) {
 	return {
 		module: {
 			loaders: [
@@ -34,10 +34,10 @@ exports.setupCSS = function(paths) {
 				}
 			]
 		}
-	}
+	};
 };
 
-exports.setupSCSS = function(paths) {
+exports.setupSCSS = function setupSCSS(paths) {
 	return {
 		module: {
 			loaders: [
@@ -48,18 +48,18 @@ exports.setupSCSS = function(paths) {
 				}
 			]
 		}
-	}
-}
+	};
+};
 
-exports.setupPOSTCSS = function() {
+exports.setupPOSTCSS = function setupPOSTCSS() {
 	return {
-		postcss: function() {
+		postcss: function postcss() {
 			return [autoprefixer];
 		}
 	};
-}
+};
 
-exports.minify = function() {
+exports.minify = function minify() {
 	return {
 		plugins: [
 			new webpack.optimize.UglifyJsPlugin({
@@ -68,10 +68,10 @@ exports.minify = function() {
 				}
 			})
 		]
-	}
-}
+	};
+};
 
-exports.setFreeVariable = function(key, value) {
+exports.setFreeVariable = function setFreeVariable(key, value) {
 	const env = {};
 	env[key] = JSON.stringify(value);
 
@@ -79,10 +79,10 @@ exports.setFreeVariable = function(key, value) {
 		plugins: [
 			new webpack.DefinePlugin(env)
 		]
-	}
-}
+	};
+};
 
-exports.extractBundle = function(options) {
+exports.extractBundle = function extractBundle(options) {
 	const entry = {};
 	entry[options.name] = options.entries;
 
@@ -93,10 +93,10 @@ exports.extractBundle = function(options) {
 				names: [options.name, 'manifest']
 			})
 		]
-	}
-}
+	};
+};
 
-exports.clean = function(path) {
+exports.clean = function clean(path) {
 	return {
 		plugins: [
 			new CleanWebpackPlugin([path], {
@@ -104,16 +104,17 @@ exports.clean = function(path) {
 			})
 		]
 	};
-}
+};
 
-exports.extractCSS = function(paths) {
+exports.extractCSS = function extractCSS(paths) {
 	return {
 		module: {
 			loaders: [
 				// Extract css during build
 				{
 					test: /\.css$/,
-					loader: ExtractTextPlugin.extract('style', 'css'), // .extract('style', 'css!postcss!..!...!')
+					// .extract('style', 'css!postcss!..!...!')
+					loader: ExtractTextPlugin.extract('style', 'css'),
 					include: paths
 				}
 			]
@@ -121,10 +122,10 @@ exports.extractCSS = function(paths) {
 		plugins: [
 			new ExtractTextPlugin('[name].[chunkhash].css')
 		]
-	}
-}
+	};
+};
 
-exports.purifyCSS = function(paths) {
+exports.purifyCSS = function purifyCSS(paths) {
 	return {
 		plugins: [
 			new PurifyCSSPlugin({
@@ -132,5 +133,19 @@ exports.purifyCSS = function(paths) {
 				paths: paths
 			})
 		]
-	}
-}
+	};
+};
+
+exports.lintJS = function lintJS(paths) {
+	return {
+		module: {
+			preLoaders: [
+				{
+					test: /\.js?$/,
+					loaders: ['eslint'],
+					include: paths
+				}
+			]
+		}
+	};
+};

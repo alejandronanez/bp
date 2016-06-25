@@ -4,7 +4,8 @@
 	"root": true,
 	"env": {
 		"browser": true,
-		"es6": true
+		"es6": true,
+		"node": true
 	},
 	"globals": {
 		"describe": false,
@@ -17,5 +18,8 @@
 		"comma-dangle": "off",
 		"arrow-body-style": "off",
 		"import/no-unresolved": "off"
-	}
+	},
+	"plugins": [
+		"react"
+	]
 }

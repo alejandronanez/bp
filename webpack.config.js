@@ -26,13 +26,16 @@ const common = {
 		})
 	]
 };
-
+/* eslint-disable no-var */
 var config;
+/* eslint-enable no-var */
 
-switch(process.env.npm_lifecycle_event) {
+/* eslint-disable indent */
+switch (process.env.npm_lifecycle_event) {
 	case 'build':
 		config = merge(
 			common,
+			parts.lintJS(PATHS.app),
 			{
 				devtool: 'source-map',
 				output: {
@@ -52,11 +55,13 @@ switch(process.env.npm_lifecycle_event) {
 			}),
 			parts.minify(),
 			parts.extractCSS(PATHS.style),
-			parts.purifyCSS([PATHS.app])
+			parts.purifyCSS([PATHS.app]),
+			parts.setupSCSS(PATHS.style)
 		);
 		break;
 	default:
 		config = merge(
+			parts.lintJS(PATHS.app),
 			common,
 			{
 				devtool: 'eval-source-map'
@@ -70,5 +75,6 @@ switch(process.env.npm_lifecycle_event) {
 			})
 		);
 }
+/* eslint-enable indent */
 
 module.exports = validate(config);
