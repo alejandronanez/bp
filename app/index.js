@@ -1,3 +1,1 @@
-import { foo } from 'foo/foo';
-
-document.body.textContent = foo();
+document.body.innerHTML = '<i class="wi wi-night-sleet"></i>';

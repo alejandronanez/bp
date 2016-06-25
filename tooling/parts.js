@@ -173,8 +173,28 @@ exports.setupBabel = function setupBabel(paths) {
 	};
 };
 
-
-
-
-
-
+exports.setupFonts = function setupFonts(path) {
+	return {
+		module: {
+			loaders: [
+				{
+					test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+					loader: 'url',
+					query: {
+						mimetype: 'application/font-woff',
+						name: './font/[hash].[ext]'
+					},
+  					include: path
+				},
+				{
+					test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+					query: {
+						name: './font/[hash].[ext]'
+					},
+					loader: 'url',
+					include: path
+				}
+			]
+		}
+	}
+}
