@@ -3,6 +3,7 @@ const webpack = require('webpack');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const PurifyCSSPlugin = require('purifycss-webpack-plugin');
+const autoprefixer = require('autoprefixer');
 
 exports.devServer = function(options) {
 	return {
@@ -28,13 +29,35 @@ exports.setupCSS = function(paths) {
 			loaders: [
 				{
 					test: /\.css$/,
-					loaders: ['style', 'css'],
+					loaders: ['style', 'css?sourceMap', 'postcss'],
 					include: paths
 				}
 			]
 		}
 	}
 };
+
+exports.setupSCSS = function(paths) {
+	return {
+		module: {
+			loaders: [
+				{
+					test: /\.scss$/,
+					loaders: ['style', 'css?sourceMap', 'postcss', 'sass?sourceMap'],
+					include: paths
+				}
+			]
+		}
+	}
+}
+
+exports.setupPOSTCSS = function() {
+	return {
+		postcss: function() {
+			return [autoprefixer];
+		}
+	};
+}
 
 exports.minify = function() {
 	return {
