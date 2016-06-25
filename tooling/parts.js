@@ -150,10 +150,11 @@ exports.lintJS = function lintJS(paths) {
 	};
 };
 
-exports.resolve = function resolve() {
+exports.resolve = function resolve(rootFolder) {
 	return {
 		resolve: {
-			extensions: ['', '.js', '.jsx']
+			extensions: ['', '.js', '.jsx'],
+			root: rootFolder
 		}
 	}
 };

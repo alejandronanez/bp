@@ -1,4 +1,3 @@
-require('react');
-const component = require('./foo/foo');
+import { foo } from 'foo/foo';
 
-document.body.appendChild(component());
+document.body.textContent = foo();
