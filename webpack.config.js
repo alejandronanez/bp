@@ -7,9 +7,9 @@ const parts = require('./tooling/parts');
 
 const PATHS = {
 	app: path.join(__dirname, 'app'),
-	fonts: path.join(__dirname, 'app', 'fonts'),
+	fonts: path.join(__dirname, 'app/font'),
 	build: path.join(__dirname, 'build'),
-	style: path.join(__dirname, 'app', 'main.scss')
+	style: path.join(__dirname, 'app/styles/main.scss')
 };
 
 const common = {

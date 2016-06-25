@@ -183,14 +183,14 @@ exports.setupFonts = function setupFonts(path) {
 					query: {
 						limit: 5000,
 						mimetype: 'application/font-woff',
-						name: 'fonts/[hash].[ext]'
+						name: './font/[hash].[ext]'
 					},
   					include: path
 				},
 				{
 					test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
 					query: {
-						name: 'fonts/[hash].[ext]'
+						name: './font/[hash].[ext]'
 					},
 					loader: 'file',
 					include: path
