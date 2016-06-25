@@ -1,4 +1,4 @@
 import 'react';
-import { fooModule } from './foo/foo';
+import { foo } from './foo/foo';
 
-document.body.appendChild(fooModule());
+document.body.textContent = foo();

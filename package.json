@@ -1,6 +1,6 @@
 {
   "private": true,
-  "name": "boilerplate",
+  "name": "ES6 boilerplate",
   "version": "1.0.0",
   "description": "Boilerplate for SPAs",
   "main": "src/index.js",
@@ -10,6 +10,7 @@
     "start": "webpack-dev-server",
     "test": "ava \"app/**/*.test.js\" --verbose",
     "cover": "nyc --all npm run test",
+    "cover:check": "nyc --all check-coverage --statements 100 --branches 100 --functions 100 --lines 100",
     "watch:test": "npm run test -- --watch",
     "watch:cover": "nodemon --quiet --watch app --exec npm run cover -s"
   },

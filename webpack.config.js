@@ -14,7 +14,7 @@ const PATHS = {
 const common = {
 	entry: {
 		app: ['babel-polyfill', PATHS.app],
-		style: ['babel-polyfill', PATHS.style]
+		style: PATHS.style
 	},
 	output: {
 		path: PATHS.build,

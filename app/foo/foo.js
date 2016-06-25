@@ -1,5 +1,3 @@
-export function fooModule() {
-	const element = document.createElement('h1');
-	element.innerHTML = 'Hello world';
-	return element;
+export function foo() {
+	return 'foo';
 }
