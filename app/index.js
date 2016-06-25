@@ -1,4 +1,4 @@
-require('react');
-const component = require('./foo/foo');
+import react from 'react';
+import { component } from './foo/foo';
 
 document.body.appendChild(component());
