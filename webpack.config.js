@@ -7,6 +7,7 @@ const parts = require('./tooling/parts');
 
 const PATHS = {
 	app: path.join(__dirname, 'app'),
+	fonts: path.join(__dirname, 'app', 'fonts'),
 	build: path.join(__dirname, 'build'),
 	style: path.join(__dirname, 'app', 'main.scss')
 };
@@ -72,6 +73,7 @@ switch (process.env.npm_lifecycle_event) {
 			parts.setupSCSS(PATHS.style),
 			parts.resolve(PATHS.app),
 			parts.setupBabel(PATHS.app),
+			parts.setupFonts(PATHS.fonts),
 			parts.setupPOSTCSS(),
 			parts.devServer({
 				host: process.env.HOST,
