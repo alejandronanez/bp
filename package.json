@@ -8,7 +8,10 @@
     "build": "webpack",
     "lint": "eslint . --ext .js",
     "start": "webpack-dev-server",
-    "test": "ava"
+    "test": "ava \"app/**/*.test.js\" --verbose",
+    "cover": "nyc --all npm run test",
+    "watch:test": "npm run test -- --watch",
+    "watch:cover": "nodemon --quiet --watch app --exec npm run cover -s"
   },
   "author": "Alejandro Nanez <alejonanez@gmail.com>",
   "license": "MIT",
@@ -33,6 +36,7 @@
     "extract-text-webpack-plugin": "^1.0.1",
     "html-webpack-plugin": "^2.21.0",
     "node-sass": "^3.8.0",
+    "nodemon": "^1.9.2",
     "nyc": "^6.6.1",
     "postcss-loader": "^0.9.1",
     "purifycss-webpack-plugin": "^2.0.3",
@@ -47,7 +51,27 @@
     "react": "^15.1.0"
   },
   "ava": {
-  	"require": ["babel-register"],
-  	"babel": "inherit"
+    "require": [
+      "babel-register"
+    ],
+    "babel": "inherit"
+  },
+  "nyc": {
+    "exclude": [
+    	"coverage",
+    	"build",
+    	"tooling",
+    	"webpack.config.js",
+    	"**/*.test.js",
+    	"app/index.js"
+    ],
+    "reporter": [
+      "lcov",
+      "text",
+      "html"
+    ],
+    "require": [
+      "babel-register"
+    ]
   }
 }
