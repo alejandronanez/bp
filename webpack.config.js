@@ -53,6 +53,7 @@ switch (process.env.npm_lifecycle_event) {
 				name: 'vendor',
 				entries: ['react']
 			}),
+			parts.setupBabel(PATHS.app),
 			parts.minify(),
 			parts.extractCSS(PATHS.style),
 			parts.purifyCSS([PATHS.app]),

@@ -22,6 +22,7 @@
     "babel-core": "^6.10.4",
     "babel-eslint": "^6.1.0",
     "babel-loader": "^6.2.4",
+    "babel-polyfill": "^6.9.1",
     "babel-preset-es2015": "^6.9.0",
     "babel-preset-react": "^6.5.0",
     "clean-webpack-plugin": "^0.1.9",
@@ -58,12 +59,12 @@
   },
   "nyc": {
     "exclude": [
-    	"coverage",
-    	"build",
-    	"tooling",
-    	"webpack.config.js",
-    	"**/*.test.js",
-    	"app/index.js"
+      "coverage",
+      "build",
+      "tooling",
+      "webpack.config.js",
+      "**/*.test.js",
+      "app/index.js"
     ],
     "reporter": [
       "lcov",

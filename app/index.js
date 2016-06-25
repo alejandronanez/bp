@@ -1,4 +1,5 @@
-import react from 'react';
-import { component } from './foo/foo';
+import 'babel-polyfill';
+import 'react';
+import { fooModule } from './foo/foo';
 
-document.body.appendChild(component());
+document.body.appendChild(fooModule());
