@@ -68,6 +68,8 @@ switch (process.env.npm_lifecycle_event) {
 			},
 			parts.setupCSS(PATHS.style),
 			parts.setupSCSS(PATHS.style),
+			parts.resolve(),
+			parts.setupBabel(PATHS.app),
 			parts.setupPOSTCSS(),
 			parts.devServer({
 				host: process.env.HOST,

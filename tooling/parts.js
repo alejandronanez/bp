@@ -141,7 +141,7 @@ exports.lintJS = function lintJS(paths) {
 		module: {
 			preLoaders: [
 				{
-					test: /\.js?$/,
+					test: /\.jsx?$/,
 					loaders: ['eslint'],
 					include: paths
 				}
@@ -149,3 +149,31 @@ exports.lintJS = function lintJS(paths) {
 		}
 	};
 };
+
+exports.resolve = function resolve() {
+	return {
+		resolve: {
+			extensions: ['', '.js', '.jsx']
+		}
+	}
+};
+
+exports.setupBabel = function setupBabel(paths) {
+	return {
+		module: {
+			loaders: [
+				{
+					test: /\.jsx?/,
+					loaders: ['babel?cacheDirectory'],
+					include: paths
+				}
+			]
+		}
+	};
+};
+
+
+
+
+
+
