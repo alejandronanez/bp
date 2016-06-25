@@ -13,7 +13,7 @@ const PATHS = {
 
 const common = {
 	entry: {
-		app: ['babel-polyfill', PATHS.app],
+		app: PATHS.app,
 		style: PATHS.style
 	},
 	output: {
@@ -50,8 +50,8 @@ switch (process.env.npm_lifecycle_event) {
 				'production'
 			),
 			parts.extractBundle({
-				name: 'vendor'
-				// entries: ['react']
+				name: 'vendor',
+				entries: ['babel-polyfill']
 			}),
 			parts.resolve(PATHS.app),
 			parts.setupBabel(PATHS.app),
