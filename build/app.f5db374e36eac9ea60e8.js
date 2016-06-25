@@ -1,2 +1,0 @@
-webpackJsonp([0,3],{0:function(n,e,o){o(1);var t=o(34);document.body.appendChild(t())},34:function(n,e){n.exports=function(){const n=document.createElement("h1");return n.innerHTML="Hello world",n}}});
-//# sourceMappingURL=app.f5db374e36eac9ea60e8.js.map

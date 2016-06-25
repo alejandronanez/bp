@@ -5,3 +5,4 @@ coverage
 *.log
 dist
 .nyc_output
+build
