@@ -181,7 +181,6 @@ exports.setupFonts = function setupFonts(path) {
 					test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
 					loader: 'url',
 					query: {
-						limit: 5000,
 						mimetype: 'application/font-woff',
 						name: './font/[hash].[ext]'
 					},
@@ -192,7 +191,7 @@ exports.setupFonts = function setupFonts(path) {
 					query: {
 						name: './font/[hash].[ext]'
 					},
-					loader: 'file',
+					loader: 'url',
 					include: path
 				}
 			]
