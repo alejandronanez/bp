@@ -19,7 +19,9 @@ const common = {
 	},
 	output: {
 		path: PATHS.build,
-		filename: '[name].js'
+		filename: '[name].js',
+		publicPath: '/bp/',
+		chunkFilename: '[chunkhash].js'
 	},
 	plugins: [
 		new HtmlWebpackPlugin({

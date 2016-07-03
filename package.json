@@ -6,6 +6,7 @@
   "main": "src/index.js",
   "scripts": {
     "build": "webpack",
+    "deploy": "gh-pages -d build",
     "lint": "eslint . --ext .js",
     "start": "webpack-dev-server",
     "test": "NODE_PATH=app ava \"./app/**/*.test.js\" --verbose",
@@ -40,6 +41,7 @@
     "eslint-plugin-react": "^5.2.2",
     "extract-text-webpack-plugin": "^1.0.1",
     "file-loader": "^0.9.0",
+    "gh-pages": "^0.11.0",
     "html-webpack-plugin": "^2.21.0",
     "jsdom": "^9.2.1",
     "node-sass": "^3.8.0",
