@@ -1,6 +1,6 @@
 {
   "private": true,
-  "name": "ES6-boilerplate",
+  "name": "bp",
   "version": "1.3.0",
   "description": "Boilerplate for SPAs",
   "main": "src/index.js",

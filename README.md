@@ -10,6 +10,7 @@ This is the base project I use when I want to quickly start a project/POC.
 - `cover:check` -> check coverage (set to a 90% minimum)
 - `npm run watch:test` -> watch tests
 - `npm run watch:cover` -> watch coverage
+- `npm run depoly` -> Deploy your project to gh-pages
 
 ### Installation
 You should have [Shrinkpack](https://github.com/JamieMason/shrinkpack) installed in your machine before running `npm install`

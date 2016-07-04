@@ -4,6 +4,7 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const PurifyCSSPlugin = require('purifycss-webpack-plugin');
 const autoprefixer = require('autoprefixer');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 exports.devServer = function devServer(options) {
 	return {
@@ -69,6 +70,14 @@ exports.minify = function minify() {
 			})
 		]
 	};
+};
+
+exports.htmlSetup = function htmlSetup(appTitle) {
+	return {
+		plugins: [
+			new HtmlWebpackPlugin({	title: appTitle })
+		]
+	}
 };
 
 exports.setFreeVariable = function setFreeVariable(key, value) {
