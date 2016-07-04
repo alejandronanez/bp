@@ -1,9 +1,9 @@
 
 const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 const merge = require('webpack-merge');
 const validate = require('webpack-validator');
 const parts = require('./tooling/parts');
+const pjson = require('./package.json');
 
 const PATHS = {
 	app: path.join(__dirname, 'app'),
@@ -19,15 +19,8 @@ const common = {
 	},
 	output: {
 		path: PATHS.build,
-		filename: '[name].js',
-		publicPath: '/bp/',
-		chunkFilename: '[chunkhash].js'
-	},
-	plugins: [
-		new HtmlWebpackPlugin({
-			title: 'SPAs Boilerplate'
-		})
-	]
+		filename: '[name].js'
+	}
 };
 /* eslint-disable no-var */
 var config;
@@ -43,6 +36,7 @@ switch (process.env.npm_lifecycle_event) {
 				devtool: 'source-map',
 				output: {
 					path: PATHS.build,
+					publicPath: `/${pjson.name}/`,
 					filename: '[name].[chunkhash].js',
 					chunkFilename: '[chunkhash].js'
 				}
@@ -58,10 +52,12 @@ switch (process.env.npm_lifecycle_event) {
 			}),
 			parts.resolve(PATHS.app),
 			parts.setupBabel(PATHS.app),
+			parts.setupFonts(PATHS.fonts),
 			parts.minify(),
 			parts.extractCSS(PATHS.style),
 			parts.purifyCSS([PATHS.app]),
-			parts.setupSCSS(PATHS.style)
+			parts.setupSCSS(PATHS.style),
+			parts.htmlSetup(pjson.description)
 		);
 		break;
 	default:
@@ -80,7 +76,8 @@ switch (process.env.npm_lifecycle_event) {
 			parts.devServer({
 				host: process.env.HOST,
 				port: process.env.PORT
-			})
+			}),
+			parts.htmlSetup(pjson.description)
 		);
 }
 /* eslint-enable indent */
