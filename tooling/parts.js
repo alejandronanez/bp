@@ -72,10 +72,13 @@ exports.minify = function minify() {
 	};
 };
 
-exports.htmlSetup = function htmlSetup(appTitle) {
+exports.htmlSetup = function htmlSetup(appTitle, template) {
 	return {
 		plugins: [
-			new HtmlWebpackPlugin({	title: appTitle })
+			new HtmlWebpackPlugin({
+				template: template,
+				title: appTitle
+			})
 		]
 	}
 };

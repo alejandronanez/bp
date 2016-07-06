@@ -7,6 +7,7 @@ const pjson = require('./package.json');
 
 const PATHS = {
 	app: path.join(__dirname, 'app'),
+	htmlTemplate: path.join(__dirname, 'app/index.html'),
 	fonts: path.join(__dirname, 'app/font'),
 	build: path.join(__dirname, 'build'),
 	style: path.join(__dirname, 'app/styles/main.scss')
@@ -57,7 +58,7 @@ switch (process.env.npm_lifecycle_event) {
 			parts.extractCSS(PATHS.style),
 			parts.purifyCSS([PATHS.app]),
 			parts.setupSCSS(PATHS.style),
-			parts.htmlSetup(pjson.description)
+			parts.htmlSetup(pjson.description, PATHS.htmlTemplate)
 		);
 		break;
 	default:
@@ -77,7 +78,7 @@ switch (process.env.npm_lifecycle_event) {
 				host: process.env.HOST,
 				port: process.env.PORT
 			}),
-			parts.htmlSetup(pjson.description)
+			parts.htmlSetup(pjson.description, PATHS.htmlTemplate)
 		);
 }
 /* eslint-enable indent */
