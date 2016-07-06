@@ -1,6 +1,6 @@
 {
   "name": "bp",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "dependencies": {
     "abab": {
       "version": "1.0.3",
