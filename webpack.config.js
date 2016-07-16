@@ -57,7 +57,6 @@ switch (process.env.npm_lifecycle_event) {
 			parts.minify(),
 			parts.extractCSS(PATHS.style),
 			parts.purifyCSS([PATHS.app]),
-			parts.setupSCSS(PATHS.style),
 			parts.htmlSetup(pjson.description, PATHS.htmlTemplate)
 		);
 		break;
@@ -68,7 +67,6 @@ switch (process.env.npm_lifecycle_event) {
 			{
 				devtool: 'eval-source-map'
 			},
-			parts.setupCSS(PATHS.style),
 			parts.setupSCSS(PATHS.style),
 			parts.resolve(PATHS.app),
 			parts.setupBabel(PATHS.app),
