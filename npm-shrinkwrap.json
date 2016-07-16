@@ -189,11 +189,6 @@
       "from": "async-foreach@>=0.1.3 <0.2.0",
       "resolved": "./node_shrinkwrap/async-foreach-0.1.3.tgz"
     },
-    "atob": {
-      "version": "1.1.3",
-      "from": "atob@>=1.1.0 <1.2.0",
-      "resolved": "./node_shrinkwrap/atob-1.1.3.tgz"
-    },
     "autoprefixer": {
       "version": "6.3.6",
       "from": "autoprefixer@>=6.3.6 <7.0.0",
@@ -1140,18 +1135,6 @@
       "version": "3.2.8",
       "from": "crypto-browserify@>=3.2.6 <3.3.0",
       "resolved": "./node_shrinkwrap/crypto-browserify-3.2.8.tgz"
-    },
-    "css": {
-      "version": "2.2.1",
-      "from": "css@>=2.0.0 <3.0.0",
-      "resolved": "./node_shrinkwrap/css-2.2.1.tgz",
-      "dependencies": {
-        "source-map": {
-          "version": "0.1.43",
-          "from": "source-map@>=0.1.38 <0.2.0",
-          "resolved": "./node_shrinkwrap/source-map-0.1.43.tgz"
-        }
-      }
     },
     "css-color-names": {
       "version": "0.0.3",
@@ -5902,47 +5885,6 @@
       "from": "punycode@>=1.2.4 <2.0.0",
       "resolved": "./node_shrinkwrap/punycode-1.4.1.tgz"
     },
-    "purify-css": {
-      "version": "1.1.9",
-      "from": "purify-css@>=1.1.1 <2.0.0",
-      "resolved": "./node_shrinkwrap/purify-css-1.1.9.tgz",
-      "dependencies": {
-        "async": {
-          "version": "0.2.10",
-          "from": "async@>=0.2.6 <0.3.0",
-          "resolved": "./node_shrinkwrap/async-0.2.10.tgz"
-        },
-        "source-map": {
-          "version": "0.1.34",
-          "from": "source-map@0.1.34",
-          "resolved": "./node_shrinkwrap/source-map-0.1.34.tgz"
-        },
-        "uglifyjs": {
-          "version": "2.4.10",
-          "from": "uglifyjs@>=2.4.10 <3.0.0",
-          "resolved": "./node_shrinkwrap/uglifyjs-2.4.10.tgz",
-          "dependencies": {
-            "yargs": {
-              "version": "1.3.3",
-              "from": "yargs@>=1.3.3 <1.4.0",
-              "resolved": "./node_shrinkwrap/yargs-1.3.3.tgz"
-            }
-          }
-        }
-      }
-    },
-    "purifycss-webpack-plugin": {
-      "version": "2.0.3",
-      "from": "purifycss-webpack-plugin@>=2.0.3 <3.0.0",
-      "resolved": "./node_shrinkwrap/purifycss-webpack-plugin-2.0.3.tgz",
-      "dependencies": {
-        "glob": {
-          "version": "5.0.15",
-          "from": "glob@>=5.0.15 <6.0.0",
-          "resolved": "./node_shrinkwrap/glob-5.0.15.tgz"
-        }
-      }
-    },
     "q": {
       "version": "1.4.1",
       "from": "q@>=1.1.2 <2.0.0",
@@ -6190,27 +6132,10 @@
       "from": "resolve-from@>=2.0.0 <3.0.0",
       "resolved": "./node_shrinkwrap/resolve-from-2.0.0.tgz"
     },
-    "resolve-url": {
-      "version": "0.2.1",
-      "from": "resolve-url@>=0.2.1 <0.3.0",
-      "resolved": "./node_shrinkwrap/resolve-url-0.2.1.tgz"
-    },
     "restore-cursor": {
       "version": "1.0.1",
       "from": "restore-cursor@>=1.0.1 <2.0.0",
       "resolved": "./node_shrinkwrap/restore-cursor-1.0.1.tgz"
-    },
-    "rework": {
-      "version": "1.0.1",
-      "from": "rework@>=1.0.1 <2.0.0",
-      "resolved": "./node_shrinkwrap/rework-1.0.1.tgz",
-      "dependencies": {
-        "convert-source-map": {
-          "version": "0.3.5",
-          "from": "convert-source-map@>=0.3.3 <0.4.0",
-          "resolved": "./node_shrinkwrap/convert-source-map-0.3.5.tgz"
-        }
-      }
     },
     "right-align": {
       "version": "0.1.3",
@@ -6430,11 +6355,6 @@
       "from": "source-map@>=0.5.5 <0.6.0",
       "resolved": "./node_shrinkwrap/source-map-0.5.6.tgz"
     },
-    "source-map-resolve": {
-      "version": "0.3.1",
-      "from": "source-map-resolve@>=0.3.0 <0.4.0",
-      "resolved": "./node_shrinkwrap/source-map-resolve-0.3.1.tgz"
-    },
     "source-map-support": {
       "version": "0.4.0",
       "from": "source-map-support@>=0.4.0 <0.5.0",
@@ -6446,11 +6366,6 @@
           "resolved": "./node_shrinkwrap/source-map-0.1.32.tgz"
         }
       }
-    },
-    "source-map-url": {
-      "version": "0.3.0",
-      "from": "source-map-url@>=0.3.0 <0.4.0",
-      "resolved": "./node_shrinkwrap/source-map-url-0.3.0.tgz"
     },
     "spdx-correct": {
       "version": "1.0.2",
@@ -6885,11 +6800,6 @@
       "version": "1.1.2",
       "from": "upper-case-first@>=1.1.0 <2.0.0",
       "resolved": "./node_shrinkwrap/upper-case-first-1.1.2.tgz"
-    },
-    "urix": {
-      "version": "0.1.0",
-      "from": "urix@>=0.1.0 <0.2.0",
-      "resolved": "./node_shrinkwrap/urix-0.1.0.tgz"
     },
     "url": {
       "version": "0.10.3",

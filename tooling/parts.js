@@ -2,7 +2,6 @@
 const webpack = require('webpack');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const PurifyCSSPlugin = require('purifycss-webpack-plugin');
 const autoprefixer = require('autoprefixer');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
@@ -119,17 +118,6 @@ exports.extractCSS = function extractCSS(paths) {
 		},
 		plugins: [
 			new ExtractTextPlugin('[name].[chunkhash].css')
-		]
-	};
-};
-
-exports.purifyCSS = function purifyCSS(paths) {
-	return {
-		plugins: [
-			new PurifyCSSPlugin({
-				basePath: process.cwd(),
-				paths: paths
-			})
 		]
 	};
 };

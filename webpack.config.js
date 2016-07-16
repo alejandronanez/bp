@@ -56,7 +56,6 @@ switch (process.env.npm_lifecycle_event) {
 			parts.setupFonts(PATHS.fonts),
 			parts.minify(),
 			parts.extractCSS(PATHS.style),
-			parts.purifyCSS([PATHS.app]),
 			parts.htmlSetup(pjson.description, PATHS.htmlTemplate)
 		);
 		break;
