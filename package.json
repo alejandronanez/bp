@@ -48,7 +48,6 @@
     "nodemon": "^1.9.2",
     "nyc": "^6.6.1",
     "postcss-loader": "^0.9.1",
-    "purifycss-webpack-plugin": "^2.0.3",
     "sass-loader": "^3.2.1",
     "sinon": "^1.17.4",
     "style-loader": "^0.13.1",
