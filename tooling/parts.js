@@ -24,26 +24,12 @@ exports.devServer = function devServer(options) {
 	};
 };
 
-exports.setupCSS = function setupCSS(paths) {
-	return {
-		module: {
-			loaders: [
-				{
-					test: /\.css$/,
-					loaders: ['style', 'css?sourceMap', 'postcss'],
-					include: paths
-				}
-			]
-		}
-	};
-};
-
 exports.setupSCSS = function setupSCSS(paths) {
 	return {
 		module: {
 			loaders: [
 				{
-					test: /\.scss$/,
+					test: /\.scss?$/,
 					loaders: ['style', 'css?sourceMap', 'postcss', 'sass?sourceMap'],
 					include: paths
 				}
@@ -124,9 +110,9 @@ exports.extractCSS = function extractCSS(paths) {
 			loaders: [
 				// Extract css during build
 				{
-					test: /\.css$/,
+					test: /\.scss?$/,
 					// .extract('style', 'css!postcss!..!...!')
-					loader: ExtractTextPlugin.extract('style', 'css'),
+					loader: ExtractTextPlugin.extract('style', 'css!postcss!sass'),
 					include: paths
 				}
 			]
