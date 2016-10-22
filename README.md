@@ -13,7 +13,9 @@ This is the base project I use when I want to quickly start a project/POC.
 - `npm run depoly` -> Deploy your project to gh-pages
 
 ### Note about Installation/Updating deps
-`npm i -S your-dep && npm shrinkwrap --dev` / `npm i -D your-dep && npm shrinkwrap --dev`
+I'm using YARN. https://yarnpkg.com
+So basically just run `yarn` instead of `npm install` and run `yarn add your-package` instead of `npm install your-package`
+For more info, please read Yarn's docs.
 
 
 ### Sidenote
