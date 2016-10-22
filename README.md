@@ -12,10 +12,8 @@ This is the base project I use when I want to quickly start a project/POC.
 - `npm run watch:cover` -> watch coverage
 - `npm run depoly` -> Deploy your project to gh-pages
 
-### Note about Installation
-I'm using shrinkpack to manage deps in the project.
-- **To Install/Update new deps:**
-`npm i -S your-dep && npm run deps` / `npm i -D your-dep && npm run deps`
+### Note about Installation/Updating deps
+`npm i -S your-dep && npm shrinkwrap --dev` / `npm i -D your-dep && npm shrinkwrap --dev`
 
 
 ### Sidenote

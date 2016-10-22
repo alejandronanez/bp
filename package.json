@@ -6,8 +6,6 @@
   "main": "src/index.js",
   "scripts": {
     "build": "webpack",
-    "deps": "npm shrinkwrap -dev && npm run shrinkpack",
-    "shrinkpack": "shrinkpack",
     "deploy": "gh-pages -d build",
     "lint": "eslint . --ext .js",
     "start": "webpack-dev-server",
@@ -51,7 +49,6 @@
     "nyc": "^6.6.1",
     "postcss-loader": "^0.9.1",
     "sass-loader": "^3.2.1",
-    "shrinkpack": "^0.17.1",
     "sinon": "^1.17.4",
     "style-loader": "^0.13.1",
     "url-loader": "^0.5.7",
